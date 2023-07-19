@@ -1,7 +1,6 @@
 // Import required modules
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const helmet = require("helmet");
 
 // Set the port number
@@ -12,7 +11,6 @@ app.use(helmet());
 
 // Parse JSON request bodies
 app.use(express.json());
-app.use(bodyParser.json());
 
 //This endpoint searches for media items on iTunes based on the provided search term and media type.
 app.get(`/search`, async (req, res) => {
